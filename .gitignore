@@ -1,0 +1,40 @@
+# Build output
+target/
+build/
+out/
+bin/
+*.jar
+*.class
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test server
+run/
+server/
+logs/
+*.log
+
+# Secrets
+.env
