@@ -1,0 +1,99 @@
+config-version: 4 # Đừng bao giờ thay đổi dòng này!
+
+combat-log:
+  # =========================
+  # Cài đặt chính
+  # =========================
+  timer:
+    duration-seconds: 20          # Thời gian combat (giây)
+    display: bossbar              # bossbar | actionbar
+  restrictions:
+    elytra:
+      disabled-in-combat: false   # false = được dùng cánh khi combat
+    teleporting:
+      disabled-in-combat: true    # Chặn dịch chuyển khi combat (lệnh, plugin, chorus fruit)
+      allow-enderpearl: true      # Vẫn cho ném Ender Pearl
+    mending:
+      disabled-in-combat: true
+    riptide:
+      stop: false                 # true = chặn hẳn Riptide; false = chỉ đặt thời gian chờ
+      cooldown: 10000             # Đơn vị: mili giây (10000 = 10 giây), chỉ dùng khi stop: false
+    punishment:
+      damage: 5.0                 # [Dành cho module WorldGuard - chưa dùng trong bản 1.0.0]
+  logout:
+    mode: commands                # commands | kill
+    commands:
+      # Tempban 10 phút. Có thể giảm xuống 1m-2m để tránh ban nhầm người rớt mạng.
+      - "essentials:tempban {player} 10m Combat"
+
+  # =========================
+  # Kích hoạt đặc biệt
+  # =========================
+  triggers:
+    tag-mode: both                # both | attacker | victim
+    start-below-health: 0         # >0: chỉ bắt đầu combat khi máu nạn nhân (sau đòn đánh) dưới giá trị này; 0 = tắt
+    enderpearl:
+      set-combat-on-land: true    # Gắn combat khi tiếp đất bằng Ender Pearl
+      only-if-already-in-combat: false
+    untag-on-kill: true
+    explosions:
+      set-combat-on-explosion: true
+
+  # =========================
+  # Loại trừ / chặn
+  # =========================
+  ignored-worlds:
+    - "ffa"
+  command-restrictions:
+    mode: blacklist               # blacklist | whitelist
+    commands:
+      - "tpa"
+      - "tpaccept"
+      - "tpahere"
+      - "tp"
+      - "back"
+      - "rtp"
+      - "home"
+      - "spawn"
+      - "warp"
+      - "shop"
+      # Dạng có prefix plugin. Plugin cũng tự so khớp alias nên mục này chỉ để chắc chắn.
+      - "essentials:tpa"
+      - "essentials:tpaccept"
+      - "essentials:tpahere"
+      - "essentials:tp"
+      - "essentials:back"
+      - "essentials:home"
+      - "essentials:spawn"
+      - "essentials:warp"
+
+  # =========================
+  # Vùng chiến đấu  [chưa hỗ trợ trong bản 1.0.0]
+  # =========================
+  combat-zone:
+    enabled: false
+    radius: 10
+
+  # =========================
+  # Hiệu ứng thuốc khi bị gắn combat  [chưa hỗ trợ trong bản 1.0.0]
+  # =========================
+  tag-effects: []
+
+  # =========================
+  # Tích hợp WorldGuard  [chưa hỗ trợ trong bản 1.0.0]
+  # =========================
+  worldguard:
+    safe-zone-barrier:
+      enabled: true
+      material: RED_STAINED_GLASS
+      radius: 1
+      view-distance: 8
+      height: 3
+    anti-kill-abuse:
+      enabled: true
+      limits:
+        max-kills: 5
+        remove-kill-after-seconds: 60
+      punish-commands:
+        - "kick {killer} Kill-Abuse detected!"
+        - "essentials:tempban {killer} 1h Kill-Abuse"
