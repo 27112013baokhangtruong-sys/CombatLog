@@ -1,0 +1,20 @@
+name: CombatLog
+version: '${project.version}'
+main: dev.combatlog.CombatLogPlugin
+api-version: '1.26.1'
+description: Chống combat log - gắn trạng thái chiến đấu và phạt người thoát game giữa trận.
+softdepend: [Essentials, WorldGuard]
+
+commands:
+  combatlog:
+    description: Quản lý trạng thái chiến đấu
+    usage: /<command> [reload|status|untag]
+    aliases: [combat]
+
+permissions:
+  combatlog.admin:
+    description: Dùng các lệnh quản trị /combatlog
+    default: op
+  combatlog.bypass:
+    description: Không bị gắn trạng thái chiến đấu
+    default: false
