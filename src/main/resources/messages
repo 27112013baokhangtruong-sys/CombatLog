@@ -1,0 +1,47 @@
+combat-log:
+  messages:
+    combat-log: "&c{player} đã thoát game khi đang chiến đấu!"
+    elytra-use-denied: "&cBạn không thể sử dụng cánh (Elytra) khi đang chiến đấu!"
+    teleporting-denied: "&cBạn không thể dịch chuyển khi đang chiến đấu!"
+    blocked-command: "&cBạn không thể sử dụng lệnh này khi đang chiến đấu!"
+    region-entry-denied: "&cBạn không thể vào khu vực này khi đang chiến đấu!"
+    riptide-denied: "&cBạn không thể sử dụng Riptide khi đang chiến đấu!"
+    mending-denied: "&cBạn không thể dùng Mending khi đang chiến đấu!"
+    afk-title: "&cVui lòng tắt AFK, bạn đang trong trận chiến!"
+    combat-ended: "&aBạn đã thoát khỏi trạng thái chiến đấu."
+    kill-abuse-warning: "&cCảnh báo: bạn đang giết người quá nhanh!"
+
+    timer:
+      actionbar: "&cThời gian: {timeLeft}/{maxTime}"
+      bossbar-title: "&cĐang Chiến Đấu: &e{timeLeft}s"
+
+commands:
+  combatlog:
+    no-permission: "<red>Bạn không có quyền để sử dụng lệnh này."
+    unknown-subcommand: "<red>Lệnh con không hợp lệ. Dùng <white>/{label} <red>để xem hướng dẫn."
+    usage-header: "<yellow>Cách sử dụng:"
+    usages:
+      reload: "<gray>/{label} reload"
+      status: "<gray>/{label} status [tên_người_chơi]"
+      untag: "<gray>/{label} untag [tên_người_chơi]"
+    reload:
+      success: "<green>Đã tải lại cấu hình và tin nhắn CombatLog thành công."
+      failed: "<red>Tải lại CombatLog thất bại. Hãy kiểm tra console để biết chi tiết."
+    errors:
+      player-not-found: "<red>Không tìm thấy người chơi: <white>{player}"
+    untag:
+      success: "<green>Đã xóa trạng thái chiến đấu của <white>{player}"
+      not-in-combat: "<yellow>Người chơi <white>{player} <yellow>đang không trong trạng thái chiến đấu."
+    status:
+      title: "<gold>Trạng thái chiến đấu của <white>{player}"
+      world: "<gray>Thế giới: <white>{world}"
+      gamemode: "<gray>Chế độ chơi: <white>{gamemode}"
+      in-combat: "<gray>Đang giao tranh: <white>{value}"
+      time-left: "<gray>Thời gian còn lại: <white>{value}"
+      ignored-world: "<gray>Thế giới được bỏ qua: <white>{value}"
+      combat-zone-enabled: "<gray>Kích hoạt vùng chiến đấu: <white>{value}"
+      worldguard-active: "<gray>Kích hoạt WorldGuard: <white>{value}"
+    values:
+      yes: "Có"
+      no: "Không"
+      not-applicable: "Không áp dụng"
